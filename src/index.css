@@ -127,7 +127,7 @@ All colors MUST be HSL.
   }
 
   .gradient-creative {
-    background: linear-gradient(135deg, hsl(var(--creative-purple)) 0%, hsl(var(--creative-pink)) 50%, hsl(var(--creative-teal)) 100%);
+    background: linear-gradient(135deg, hsl(var(--creative-purple)) 0%, hsl(var(--creative-pink)) 100%);
   }
 
   .gradient-subtle {
@@ -141,5 +141,14 @@ All colors MUST be HSL.
   .hover-lift:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px -10px hsl(var(--primary) / 0.2);
+  }
+
+  .image-hover-dynamic {
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .image-hover-dynamic:hover {
+    transform: scale(1.05) rotate(2deg) translateY(-10px);
+    box-shadow: 0 25px 50px -12px hsl(var(--primary) / 0.4);
   }
 }

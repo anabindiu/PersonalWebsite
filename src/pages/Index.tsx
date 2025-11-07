@@ -35,9 +35,9 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="section-padding min-h-screen flex items-center justify-center gradient-subtle">
+      <section className="section-padding min-h-screen flex items-center justify-center bg-background">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 animate-fade-in bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 animate-fade-in bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             Ana Bindiu
           </h1>
           <p className="text-xl md:text-2xl text-foreground mb-8 font-semibold">
@@ -70,7 +70,7 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="section-padding">
+      <section id="about" className="section-padding bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             About Me
@@ -105,7 +105,7 @@ const Index = () => {
       </section>
 
       {/* Development Section */}
-      <section id="dev" className="section-padding gradient-subtle">
+      <section id="dev" className="section-padding bg-background">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-primary">
             Software Development
@@ -126,7 +126,7 @@ const Index = () => {
       </section>
 
       {/* Painting Portfolio */}
-      <section id="painting" className="section-padding">
+      <section id="painting" className="section-padding bg-muted/30">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center text-secondary">
             Painting Portfolio
@@ -147,7 +147,7 @@ const Index = () => {
       </section>
 
       {/* Photography Portfolio */}
-      <section id="photography" className="section-padding gradient-subtle">
+      <section id="photography" className="section-padding bg-background">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center text-accent">
             Photography Portfolio
@@ -155,19 +155,19 @@ const Index = () => {
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
             Capturing moments, emotions, and stories through the lens
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {photos.map((photo, index) => (
               <div
                 key={index}
-                className="group relative aspect-square overflow-hidden rounded-lg shadow-lg hover-lift border-2 border-accent/20"
+                className="group relative aspect-square overflow-hidden rounded-lg image-hover-dynamic border-2 border-accent/20 cursor-pointer"
               >
                 <img
                   src={photo}
                   alt={`Photography work ${index + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-accent/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-accent/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             ))}
           </div>
@@ -175,9 +175,9 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="section-padding">
+      <section id="contact" className="section-padding bg-muted/30">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             Let's Connect
           </h2>
           <p className="text-xl text-muted-foreground mb-12">
