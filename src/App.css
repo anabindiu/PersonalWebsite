@@ -1,42 +1,172 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design system – softer, Cogni-wave style palette (all HSL) */
+
+@layer base {
+    :root {
+        /* soft warm background + deep, calm foreground */
+        --background: 48 100% 97%;
+        --foreground: 249 25% 12%;
+        --card: 0 0% 100%;
+        --card-foreground: 249 25% 12%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 249 25% 12%;
+        /* main lavender + lilac accents */
+        --primary: 258 70% 58%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 295 70% 65%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 48 70% 95%;
+        --muted-foreground: 249 15% 35%;
+        --accent: 260 70% 60%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 72% 55%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 45 24% 88%;
+        --input: 45 24% 88%;
+        --ring: 258 70% 58%;
+        --radius: 0.75rem;
+        /* extra creative colors for gradients, if needed */
+        --creative-purple: 258 70% 58%;
+        --creative-pink: 295 70% 65%;
+        --creative-teal: 167 62% 55%;
+        --creative-coral: 18 86% 65%;
+        --creative-mint: 151 56% 60%;
+        --sidebar-background: 48 100% 97%;
+        --sidebar-foreground: 249 25% 12%;
+        --sidebar-primary: 258 70% 58%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 48 70% 95%;
+        --sidebar-accent-foreground: 258 70% 58%;
+        --sidebar-border: 45 24% 88%;
+        --sidebar-ring: 258 70% 58%;
+    }
+
+    .dark {
+        --background: 250 25% 6%;
+        --foreground: 48 40% 96%;
+        --card: 250 25% 10%;
+        --card-foreground: 48 40% 96%;
+        --popover: 250 25% 10%;
+        --popover-foreground: 48 40% 96%;
+        --primary: 258 80% 70%;
+        --primary-foreground: 250 25% 10%;
+        --secondary: 295 75% 72%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 250 18% 18%;
+        --muted-foreground: 48 25% 80%;
+        --accent: 260 70% 60%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 72% 55%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 250 20% 20%;
+        --input: 250 20% 20%;
+        --ring: 258 80% 70%;
+        --creative-purple: 258 80% 70%;
+        --creative-pink: 295 75% 72%;
+        --creative-teal: 167 62% 55%;
+        --creative-coral: 18 86% 65%;
+        --creative-mint: 151 56% 60%;
+        --sidebar-background: 250 25% 8%;
+        --sidebar-foreground: 48 40% 96%;
+        --sidebar-primary: 258 80% 70%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 250 20% 16%;
+        --sidebar-accent-foreground: 48 40% 96%;
+        --sidebar-border: 250 20% 20%;
+        --sidebar-ring: 258 80% 70%;
+    }
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', sans-serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', serif;
+    }
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+@layer utilities {
+    .star-twinkle {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 9999px;
+        background: hsla(0, 0%, 100%, 0.95);
+        box-shadow: 0 0 14px hsla(0, 0%, 100%, 0.9);
+        animation: star-twinkle 1.8s ease-in-out infinite;
+    }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
+    .glass-effect {
+        @apply bg-background/80 backdrop-blur-md;
+    }
 
-.card {
-  padding: 2em;
-}
+    .section-padding {
+        @apply py-16 md:py-24 px-6 md:px-12;
+    }
 
-.read-the-docs {
-  color: #888;
+    /* strong top/bottom gradient used in footer etc. */
+    .gradient-creative {
+        background: linear-gradient( 135deg, hsl(var(--creative-purple)) 0%, hsl(var(--creative-pink)) 100% );
+    }
+
+    /* subtle hero background like the example site */
+    .gradient-subtle {
+        background: radial-gradient(circle at top left, hsla(258, 70%, 96%, 1) 0, transparent 55%), radial-gradient(circle at bottom right, hsla(295, 100%, 97%, 1) 0, transparent 45%), linear-gradient(to bottom, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+    }
+
+    .hover-lift {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px hsl(var(--primary) / 0.2);
+        }
+
+    .image-hover-dynamic {
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+        .image-hover-dynamic:hover {
+            transform: scale(1.05) rotate(2deg) translateY(-10px);
+            box-shadow: 0 25px 50px -12px hsl(var(--primary) / 0.4);
+        }
+
+    /* big soft hero card */
+    .hero-card {
+        border-radius: 2rem;
+        box-shadow: 0 32px 80px -40px hsl(249 40% 30% / 0.35);
+        background: hsl(0 0% 100%); /* clean white card like Naomi’s */
+    }
+
+    /* Twinkling star animation */
+    @keyframes star-twinkle {
+        0% {
+            opacity: 0;
+            transform: scale(0.7) translateY(0);
+        }
+
+        50% {
+            opacity: 1;
+            transform: scale(1.5) translateY(-6px);
+        }
+
+        100% {
+            opacity: 0.2;
+            transform: scale(0.9) translateY(0);
+        }
+    }
+
 }
