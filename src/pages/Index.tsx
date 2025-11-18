@@ -25,7 +25,8 @@ import photo22 from "@/assets/budapest1.jpg";
 import photo23 from "@/assets/canada1.jpg";
 import photo24 from "@/assets/italy8.jpg";
 import photo25 from "@/assets/budapest2.jpg";
-import StarField from "@/components/StarField";
+import { Link } from "react-router-dom";
+
 
 import { useEffect, useState } from "react";
 
@@ -50,30 +51,6 @@ const Index = () => {
 
         return () => clearInterval(interval);
     }, []);
-    const photos = [
-        photo1,
-        photo2,
-        photo3,
-        photo4,
-        photo5,
-        photo6,
-        photo7,
-        photo8,
-        photo9,
-        photo10,
-        photo11,
-        photo12,
-        photo13,
-        photo14,
-        photo15,
-        photo16,
-        photo17,
-        photo18,
-        photo19,
-        photo20,
-        photo21,
-        photo22
-    ];
 
     return (
         <div className="min-h-screen bg-background text-foreground">
@@ -89,18 +66,18 @@ const Index = () => {
                     <a href="#about" className="hover:text-primary transition-colors">
                         About
                     </a>
-                    <a href="#dev" className="hover:text-primary transition-colors">
+                    <Link to="/development" className="text-sm hover:text-white/80 transition-colors font-medium">
                         Development
-                    </a>
-                    <a href="#painting" className="hover:text-primary transition-colors">
+                    </Link>
+                    <Link to="/painting" className="text-sm hover:text-white/80 transition-colors font-medium">
                         Painting
-                    </a>
-                    <a href="#photography" className="hover:text-primary transition-colors">
+                    </Link>
+                    <Link to="/photography" className="text-sm hover:text-white/80 transition-colors font-medium">
                         Photography
-                    </a>
-                    <a href="#contact" className="hover:text-primary transition-colors">
+                    </Link>
+                    <Link to="/contact" className="hover:text-primary transition">
                         Contact
-                    </a>
+                    </Link>
                 </div>
             </nav>
 
@@ -141,20 +118,17 @@ const Index = () => {
                                     </p>
 
                                     <div className="flex flex-wrap gap-3">
-                                        <Button
-                                            size="lg"
-                                            asChild
-                                            className="bg-primary hover:bg-primary/90 shadow-md"
-                                        >
-                                            <a href="#dev">View development work</a>
+                                        <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
+                                            <Link to="/development">
+                                                <Code2 className="mr-2 h-5 w-5" />
+                                                See projects
+                                            </Link>
                                         </Button>
-                                        <Button
-                                            size="lg"
-                                            variant="outline"
-                                            asChild
-                                            className="border-white/70 text-white hover:bg-white/10"
-                                        >
-                                            <a href="#photography">See photography</a>
+                                        <Button size="lg" asChild className="bg-accent hover:bg-accent/90">
+                                            <Link to="/photography">
+                                                <Camera className="mr-2 h-5 w-5" />
+                                                View photography gallery
+                                            </Link>
                                         </Button>
                                     </div>
                                 </div>
@@ -180,31 +154,30 @@ const Index = () => {
 
 
             {/* About Section */}
-            <section id="about" className="section-padding bg-gradient-to-b from-secondary/10 to-secondary/5">
+            <section
+                id="about"
+                className="section-padding bg-gradient-to-b from-secondary/10 to-secondary/5"
+            >
                 <div className="relative max-w-6xl mx-auto space-y-12 overflow-hidden">
-                    {/* animated starfield background */}
-                    <StarField />
-
-                    {/* Text + photos */}
+                    {/* Top: text + photo collage */}
                     <div className="grid gap-10 md:grid-cols-[1.1fr,0.9fr] items-center">
                         {/* Left: text */}
                         <div className="space-y-5">
-                            <div className="h-[2px] w-20 md:w-28 rounded-full bg-secondary/40" />
+                            <div className="h-[2px] w-20 md:w-28 rounded-full bg-secondary/20" />
                             <h2 className="text-3xl md:text-4xl font-bold">
                                 A multi-disciplinary creator
                             </h2>
                             <p className="text-muted-foreground text-base md:text-lg">
                                 I move between development, painting, and photography — combining
-                                structure and logic with intuition and color. My work lives where clean
-                                interfaces meet warm, human stories.
+                                structure and logic with intuition and color. My work lives where
+                                clean interfaces meet warm, human stories.
                             </p>
                             <p className="text-muted-foreground text-sm md:text-base">
-                                I love capturing everyday moments, working on thoughtful digital projects,
-                                and creating spaces (online and offline) that feel calm, warm, and
-                                intentional.
+                                I love capturing everyday moments, working on thoughtful digital
+                                projects, and creating spaces (online and offline) that feel calm,
+                                warm, and intentional.
                             </p>
                         </div>
-
 
                         {/* Right: photo collage */}
                         <div className="relative w-full max-w-md mx-auto md:mx-0">
@@ -257,6 +230,7 @@ const Index = () => {
                     </div>
                 </div>
             </section>
+
 
             {/* Development Section */}
             <section id="dev" className="section-padding bg-muted/40">
@@ -326,82 +300,57 @@ const Index = () => {
                         </Card>
                     </div>
                 </div>
-            </section>
-
-            {/* Painting Portfolio */}
-            <section id="painting" className="section-padding bg-background">
-                <div className="max-w-6xl mx-auto space-y-10">
-                    <div className="grid gap-10 md:grid-cols-[1.1fr,0.9fr] items-center">
-                        <div className="space-y-4">
-                            <h2 className="text-3xl md:text-4xl font-bold text-secondary">
-                                Painting Portfolio
-                            </h2>
-                            <p className="text-muted-foreground max-w-xl">
-                                I paint as a way to slow down — mixing color, symbolism, and
-                                quiet moments of reflection. My work blends softness with bold
-                                accents, often inspired by nature, travel, and faith.
-                            </p>
-                            <p className="text-sm text-muted-foreground">
-                                A full gallery is coming soon. In the meantime, you can reach
-                                out if you’d like to commission a piece or see work in progress.
-                            </p>
-                            <Button
-                                variant="outline"
-                                className="border-secondary/50 text-secondary hover:bg-secondary hover:text-white mt-2"
-                            >
-                                Join waitlist for prints
-                            </Button>
-                        </div>
-
-                        <Card className="p-8 bg-secondary/8 border border-secondary/25 hover-lift">
-                            <div className="space-y-4 text-center">
-                                <Palette className="h-10 w-10 mx-auto text-secondary" />
-                                <p className="text-base text-muted-foreground">
-                                    Soon this space will be a rotating gallery of my favorite
-                                    canvases — textures, layers, and color stories captured in a
-                                    more immersive way.
-                                </p>
-                                <p className="text-xs text-muted-foreground/80">
-                                    Sneak peeks will also appear on my social media as I build the
-                                    collection.
-                                </p>
-                            </div>
-                        </Card>
-                    </div>
+                <div className="mt-8 flex justify-center">
+                    <Button asChild size="lg" variant="outline" className="border-primary/60 text-primary hover:bg-primary hover:text-white">
+                        <Link to="/development">
+                            See projects
+                        </Link>
+                    </Button>
                 </div>
             </section>
 
-            {/* Photography Portfolio */}
-            <section id="photography" className="section-padding bg-muted/30">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center space-y-4 mb-10">
-                        <h2 className="text-3xl md:text-4xl font-bold text-accent">
-                            Photography Portfolio
-                        </h2>
-                        <p className="text-muted-foreground max-w-2xl mx-auto">
-                            A mix of travel, everyday life, and small in-between moments with
-                            a soft, cinematic feel.
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                        {photos.map((photo, index) => (
-                            <div
-                                key={index}
-                                className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-accent/20 bg-white/40 image-hover-dynamic cursor-pointer"
-                            >
-                                <img
-                                    src={photo}
-                                    alt={`Photography work ${index + 1}`}
-                                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
-                                    loading="lazy"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-accent/45 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                            </div>
-                        ))}
-                    </div>
+            {/* Painting teaser on home page */}
+            <section id="painting" className="section-padding bg-muted/30">
+                <div className="max-w-4xl mx-auto text-center space-y-6">
+                    <h2 className="text-3xl md:text-4xl font-bold text-secondary">
+                        Painting Portfolio
+                    </h2>
+                    <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+                        Soft, symbolic paintings inspired by nature, travel, and quiet moments of
+                        reflection — currently in progress as I build a new collection.
+                    </p>
+                    <Button
+                        asChild
+                        size="lg"
+                        variant="outline"
+                        className="border-secondary/70 text-secondary hover:bg-secondary hover:text-white"
+                    >
+                        <Link to="/painting">
+                            Explore painting portfolio
+                        </Link>
+                    </Button>
                 </div>
             </section>
+
+
+            {/* Photography teaser on home page */}
+            <section id="photography" className="section-padding bg-background">
+                <div className="max-w-4xl mx-auto text-center space-y-6">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-2 text-accent">
+                        Photography
+                    </h2>
+                    <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
+                        Soft, film-inspired photos that capture autumn walks, quiet rooms, and the
+                        in–between moments that feel like little movie scenes.
+                    </p>
+                    <Button asChild size="lg" className="bg-accent hover:bg-accent/90 mt-2">
+                        <Link to="/photography">
+                            Browse photography gallery
+                        </Link>
+                    </Button>
+                </div>
+            </section>
+
 
             {/* Contact Section */}
             <section id="contact" className="section-padding bg-background">
@@ -465,14 +414,19 @@ const Index = () => {
             </section>
 
             {/* Footer */}
-            <footer className="gradient-creative text-white py-6 px-6 mt-10">
-                <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
-                    <p>© 2025 Ana Bindiu. All rights reserved.</p>
-                    <p className="text-white/75">
-                        Designed with a mix of code, paint, and coffee.
-                    </p>
+            <footer className="border-t border-border bg-background/90">
+                <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs md:text-sm text-muted-foreground">
+                    <span>© 2025 Ana Bindiu. All rights reserved.</span>
+
+                    <span className="flex items-center gap-1 text-center md:text-right">
+                        Designed with a mix of
+                        <span className="font-semibold text-primary">code</span>,
+                        <span className="font-semibold text-secondary">paint</span>,
+                        and coffee.
+                    </span>
                 </div>
             </footer>
+
         </div>
     );
 };

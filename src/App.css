@@ -98,16 +98,6 @@
 }
 
 @layer utilities {
-    .star-twinkle {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-radius: 9999px;
-        background: hsla(0, 0%, 100%, 0.95);
-        box-shadow: 0 0 14px hsla(0, 0%, 100%, 0.9);
-        animation: star-twinkle 1.8s ease-in-out infinite;
-    }
-
     .glass-effect {
         @apply bg-background/80 backdrop-blur-md;
     }
@@ -150,23 +140,4 @@
         box-shadow: 0 32px 80px -40px hsl(249 40% 30% / 0.35);
         background: hsl(0 0% 100%); /* clean white card like Naomi’s */
     }
-
-    /* Twinkling star animation */
-    @keyframes star-twinkle {
-        0% {
-            opacity: 0;
-            transform: scale(0.7) translateY(0);
-        }
-
-        50% {
-            opacity: 1;
-            transform: scale(1.5) translateY(-6px);
-        }
-
-        100% {
-            opacity: 0.2;
-            transform: scale(0.9) translateY(0);
-        }
-    }
-
 }
