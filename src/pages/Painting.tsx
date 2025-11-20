@@ -9,7 +9,13 @@ import paintingCover from "@/assets/Moonrisepainting2.png";
 import paintingDetail1 from "@/assets/Moonrisepainting1.png";
 import paintingDetail2 from "@/assets/Moonrisepainting3.png";
 import paintingVideo from "@/assets/MoonriseDaydream.mp4";
-import habarnamLogo from "@/assets/habarnamLogo.png"; // 👈 logo import
+import paintingCover2 from "@/assets/AwakenedWingspainting1.png";
+import awaekendPaintingDetail1 from "@/assets/AwakenedWingspainting2.png";
+import awaekendPaintingDetail2 from "@/assets/AwakenedWingspainting3.png";
+import painting2Video from "@/assets/ButterflyTotevideo.mp4";
+import habarnamLogo from "@/assets/habarnamLogo.png"; 
+// TODO later: add your butterfly tote mockup here, e.g.
+// import awakenedWingsCover from "@/assets/AwakenedWingsTote.png";
 
 type MediaItem =
     | { type: "image"; src: string; alt: string }
@@ -58,6 +64,39 @@ const products: Product[] = [
             },
         ],
     },
+    {
+        id: "awakened-wings-tote-bag",
+        title: "Awakened Wings – Tote Bag",
+        price: "$20.00 CAD",
+        teaser:
+            "A soft sky filled with hand-drawn butterflies, a gentle reminder that your soul is allowed to grow, unfold, and begin again.",
+        description:
+            "Awakened Wings is a little prayer you can carry on your shoulder. Three butterflies rise through a dreamy, lilac sky—symbolizing seasons of change, healing, and quiet spiritual awakening. It’s for morning walks, journaling days, and café moments where you feel God tugging your heart a little closer to the light. Roomy enough for books, sketchbooks, and everyday essentials, while still feeling soft, lightweight, and easy to throw on with anything.",
+        // TODO: swap this to your butterfly mockup when ready:
+        cover: paintingCover,
+        media: [
+            {
+                type: "image",
+                src: paintingCover2,
+                alt: "Awakened Wings – Tote Bag mockup",
+            },
+            {
+                type: "image",
+                src: awaekendPaintingDetail1,
+                alt: "Awakened Wings – illustration details",
+            },
+            {
+                type: "image",
+                src: awaekendPaintingDetail2,
+                alt: "Awakened Wings – styled photo",
+            },
+            {
+                type: "video",
+                src: painting2Video,
+                alt: "Awakened Wings – video preview",
+            },
+        ],
+    },
 ];
 
 const findProductById = (id: string | undefined) =>
@@ -66,8 +105,6 @@ const findProductById = (id: string | undefined) =>
 /* ---------- LIST PAGE: /painting ---------- */
 
 const PaintingList = () => {
-    const product = products[0];
-
     return (
         <div className="min-h-screen bg-[#fdf7ff] text-foreground">
             {/* Top bar with back + brand + tabs */}
@@ -92,10 +129,7 @@ const PaintingList = () => {
 
                 {/* tabs row */}
                 <div className="max-w-6xl mx-auto px-6 pb-4 flex flex-wrap justify-center gap-6 text-sm font-medium text-muted-foreground">
-                    <a
-                        href="/#about"
-                        className="hover:text-[#f1c6d9] transition-colors"
-                    >
+                    <a href="/#about" className="hover:text-[#f1c6d9] transition-colors">
                         About
                     </a>
                     <Link
@@ -112,10 +146,7 @@ const PaintingList = () => {
                     >
                         Photography
                     </Link>
-                    <Link
-                        to="/contact"
-                        className="hover:text-[#f1c6d9] transition-colors"
-                    >
+                    <Link to="/contact" className="hover:text-[#f1c6d9] transition-colors">
                         Contact
                     </Link>
                 </div>
@@ -130,49 +161,56 @@ const PaintingList = () => {
                     <p className="text-lg md:text-xl text-[#7d6a92]">Fan Favorites</p>
                 </header>
 
-                {/* Single product card */}
+                {/* Product cards */}
                 <section className="grid gap-8">
-                    <Card className="bg-white/90 border-[#f1c6d9]/60 shadow-sm p-4 md:p-6">
-                        <div className="grid gap-6 md:grid-cols-[minmax(0,1.4fr),minmax(0,1fr)] items-start">
-                            {/* Left: big cover image */}
-                            <button
-                                type="button"
-                                className="relative overflow-hidden rounded-2xl border border-[#f1c6d9]/60 bg-[#fdf0ea] image-hover-dynamic w-full"
-                            >
-                                <Link to={`/painting/${product.id}`} className="block">
-                                    <img
-                                        src={product.cover}
-                                        alt={product.title}
-                                        className="w-full rounded-2xl object-cover"
-                                        loading="lazy"
-                                    />
-                                </Link>
-                            </button>
-
-                            {/* Right: copy & CTA */}
-                            <div className="space-y-4">
-                                <div className="space-y-1">
-                                    <h2 className="text-2xl md:text-3xl font-semibold text-[#f1c6d9]">
-                                        {product.title}
-                                    </h2>
-                                    <p className="text-sm text-[#7d6a92]">
-                                        From {product.price}
-                                    </p>
-                                </div>
-                                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                                    {product.teaser}
-                                </p>
-
-                                <Button
-                                    asChild
-                                    size="lg"
-                                    className="mt-2 bg-[#f1c6d9] hover:bg-[#eeafcf] text-white"
+                    {products.map((product) => (
+                        <Card
+                            key={product.id}
+                            className="bg-white/90 border-[#f1c6d9]/60 shadow-sm p-4 md:p-6"
+                        >
+                            <div className="grid gap-6 md:grid-cols-[minmax(0,1.4fr),minmax(0,1fr)] items-start">
+                                {/* Left: big cover image */}
+                                <button
+                                    type="button"
+                                    className="relative overflow-hidden rounded-2xl border border-[#f1c6d9]/60 bg-[#fdf0ea] image-hover-dynamic w-full"
                                 >
-                                    <Link to={`/painting/${product.id}`}>View product details</Link>
-                                </Button>
+                                    <Link to={`/painting/${product.id}`} className="block">
+                                        <img
+                                            src={product.cover}
+                                            alt={product.title}
+                                            className="w-full rounded-2xl object-cover"
+                                            loading="lazy"
+                                        />
+                                    </Link>
+                                </button>
+
+                                {/* Right: copy & CTA */}
+                                <div className="space-y-4">
+                                    <div className="space-y-1">
+                                        <h2 className="text-2xl md:text-3xl font-semibold text-[#f1c6d9]">
+                                            {product.title}
+                                        </h2>
+                                        <p className="text-sm text-[#7d6a92]">
+                                            From {product.price}
+                                        </p>
+                                    </div>
+                                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                                        {product.teaser}
+                                    </p>
+
+                                    <Button
+                                        asChild
+                                        size="lg"
+                                        className="mt-2 bg-[#f1c6d9] hover:bg-[#eeafcf] text-white"
+                                    >
+                                        <Link to={`/painting/${product.id}`}>
+                                            View product details
+                                        </Link>
+                                    </Button>
+                                </div>
                             </div>
-                        </div>
-                    </Card>
+                        </Card>
+                    ))}
                 </section>
             </main>
         </div>
@@ -210,10 +248,7 @@ const PaintingProduct = ({ product }: { product: Product }) => {
 
                 {/* tabs row */}
                 <div className="max-w-6xl mx-auto px-6 pb-4 flex flex-wrap justify-center gap-6 text-sm font-medium text-muted-foreground">
-                    <a
-                        href="/#about"
-                        className="hover:text-[#f1c6d9] transition-colors"
-                    >
+                    <a href="/#about" className="hover:text-[#f1c6d9] transition-colors">
                         About
                     </a>
                     <Link
@@ -230,10 +265,7 @@ const PaintingProduct = ({ product }: { product: Product }) => {
                     >
                         Photography
                     </Link>
-                    <Link
-                        to="/contact"
-                        className="hover:text-[#f1c6d9] transition-colors"
-                    >
+                    <Link to="/contact" className="hover:text-[#f1c6d9] transition-colors">
                         Contact
                     </Link>
                 </div>
