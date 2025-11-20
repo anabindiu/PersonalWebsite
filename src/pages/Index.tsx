@@ -1,28 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import photo1 from "@/assets/photo-1.png";
-import photo2 from "@/assets/photo-2.png";
-import photo3 from "@/assets/photo-3.png";
-import photo4 from "@/assets/photo-4.png";
-import photo5 from "@/assets/photo-5.png";
-import photo6 from "@/assets/photo-6.png";
-import photo7 from "@/assets/photo-7.png";
-import photo8 from "@/assets/photo-8.png";
-import photo9 from "@/assets/photo-9.png";
-import photo10 from "@/assets/photo-10.png";
 import photo11 from "@/assets/mepic1.jpg";
-import photo12 from "@/assets/mepic2.jpg";
-import photo13 from "@/assets/mepic3.jpg";
 import photo14 from "@/assets/mepic4.jpg";
-import photo15 from "@/assets/italy1.jpg";
 import photo16 from "@/assets/italy2.jpg";
-import photo17 from "@/assets/italy3.jpg";
-import photo18 from "@/assets/italy4.jpg";
-import photo19 from "@/assets/italy5.jpg";
 import photo20 from "@/assets/italy6.jpg";
-import photo21 from "@/assets/italy7.jpg";
-import photo22 from "@/assets/budapest1.jpg";
-import photo23 from "@/assets/canada1.jpg";
 import photo24 from "@/assets/italy8.jpg";
 import photo25 from "@/assets/budapest2.jpg";
 import { Link } from "react-router-dom";
@@ -37,10 +18,42 @@ import {
     Camera,
     Code2,
     Palette,
+    BugPlay,
+    Database,
+    CloudCog,
+    LayoutTemplate,
 } from "lucide-react";
 
 const Index = () => {
     const heroImages = [photo16, photo20, photo24, photo25];
+    const skills = [
+        {
+            emoji: "⚛️",
+            title: "Front-end Engineering",
+            subtitle: "React, TypeScript, Vite, SPA patterns.",
+        },
+        {
+            emoji: "🧩",
+            title: "Component Libraries",
+            subtitle: "Blazor / MudBlazor, reusable UI systems.",
+        },
+        {
+            emoji: "🧪",
+            title: "Testing & QA Automation",
+            subtitle: "Selenium, bUnit, xUnit, end-to-end flows.",
+        },
+        {
+            emoji: "🗄️",
+            title: "APIs & Data",
+            subtitle: "C# / .NET, REST APIs, SQL, EF-style data layers.",
+        },
+        {
+            emoji: "☁️",
+            title: "Cloud & Dev Tools",
+            subtitle: "Azure, Git, CI/CD, DevOps-friendly workflows.",
+        },
+    ];
+
 
     const [activeHeroIndex, setActiveHeroIndex] = useState(0);
 
@@ -66,13 +79,22 @@ const Index = () => {
                     <a href="#about" className="hover:text-primary transition-colors">
                         About
                     </a>
-                    <Link to="/development" className="text-sm hover:text-white/80 transition-colors font-medium">
+                    <Link
+                        to="/development"
+                        className="text-sm font-medium transition-colors hover:text-primary"
+                    >
                         Development
                     </Link>
-                    <Link to="/painting" className="text-sm hover:text-white/80 transition-colors font-medium">
+                    <Link
+                        to="/painting"
+                        className="text-sm font-medium transition-colors hover:text-primary"
+                    >
                         Painting
                     </Link>
-                    <Link to="/photography" className="text-sm hover:text-white/80 transition-colors font-medium">
+                    <Link
+                        to="/photography"
+                        className="text-sm font-medium transition-colors hover:text-primary"
+                    >
                         Photography
                     </Link>
                     <Link to="/contact" className="hover:text-primary transition">
@@ -231,26 +253,28 @@ const Index = () => {
                 </div>
             </section>
 
-
             {/* Development Section */}
-            <section id="dev" className="section-padding bg-muted/40">
+            <section id="dev" className="section-padding bg-[#fdf7ff]">
                 <div className="max-w-6xl mx-auto space-y-10">
                     <div className="text-center space-y-4">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">
+                        {/* Lilac Mist heading */}
+                        <h2 className="text-3xl md:text-4xl font-bold text-[#dac2e2]">
                             Software Development
                         </h2>
-                        <p className="text-muted-foreground max-w-2xl mx-auto">
+                        {/* Soft neutral text */}
+                        <p className="text-[#7d6a92] max-w-2xl mx-auto">
                             I enjoy turning ideas into intuitive interfaces and reliable
                             systems, from pixel to database.
                         </p>
                     </div>
 
                     <div className="grid gap-8 md:grid-cols-[1.1fr,0.9fr] items-start">
-                        <Card className="p-7 md:p-8 border border-primary/20 bg-white/80">
-                            <h3 className="text-xl font-semibold mb-4">
-                                Focus & Approach
+                        {/* Left card – Rosy Glow accents */}
+                        <Card className="p-7 md:p-8 border border-[#f1c6d9] bg-white/90 shadow-sm">
+                            <h3 className="text-xl font-semibold mb-4 text-[#4a3059]">
+                                Focus &amp; Approach
                             </h3>
-                            <p className="text-sm md:text-base text-muted-foreground mb-5 leading-relaxed">
+                            <p className="text-sm md:text-base text-[#7d6a92] mb-5 leading-relaxed">
                                 I care about thoughtful UI, readable code, and collaboration.
                                 Most of my work is in modern web stacks — especially TypeScript
                                 and React — but I’m comfortable moving across the stack when
@@ -266,7 +290,7 @@ const Index = () => {
                                 ].map((item) => (
                                     <span
                                         key={item}
-                                        className="px-3 py-1.5 rounded-full bg-primary/8 border border-primary/20 text-xs font-medium text-primary"
+                                        className="px-3 py-1.5 rounded-full bg-[#fef4f9] border border-[#f1c6d9] text-xs font-medium text-[#d481a6]"
                                     >
                                         {item}
                                     </span>
@@ -274,8 +298,11 @@ const Index = () => {
                             </div>
                         </Card>
 
-                        <Card className="p-7 md:p-8 border border-primary/15 bg-primary/3">
-                            <h3 className="text-xl font-semibold mb-4">Tech Stack</h3>
+                        {/* Right card – Daydream Blue accents */}
+                        <Card className="p-7 md:p-8 border border-[#c7d7e8] bg-[#f7fbff] shadow-sm">
+                            <h3 className="text-xl font-semibold mb-4 text-[#384763]">
+                                Tech Stack
+                            </h3>
                             <div className="flex flex-wrap gap-2.5">
                                 {[
                                     "React",
@@ -291,7 +318,7 @@ const Index = () => {
                                 ].map((skill) => (
                                     <span
                                         key={skill}
-                                        className="px-3 py-1.5 rounded-full bg-white/80 text-xs font-medium text-foreground border border-border/80"
+                                        className="px-3 py-1.5 rounded-full bg-white text-xs font-medium text-[#4b5c78] border border-[#c7d7e8]"
                                     >
                                         {skill}
                                     </span>
@@ -300,8 +327,15 @@ const Index = () => {
                         </Card>
                     </div>
                 </div>
+
+                {/* Button – Candy Blush outline */}
                 <div className="mt-8 flex justify-center">
-                    <Button asChild size="lg" variant="outline" className="border-primary/60 text-primary hover:bg-primary hover:text-white">
+                    <Button
+                        asChild
+                        size="lg"
+                        variant="outline"
+                        className="border-[#f1c6d9] text-[#f1c6d9] hover:bg-[#f1c6d9] hover:text-[#4c3046]"
+                    >
                         <Link to="/development">
                             See projects
                         </Link>
@@ -309,47 +343,134 @@ const Index = () => {
                 </div>
             </section>
 
+            {/* Skills Section */}
+            <section
+                id="skills"
+                className="py-12 md:py-16 px-6 md:px-12 bg-white"
+            >
+                <div className="max-w-5xl mx-auto text-center space-y-8">
+                    <div className="space-y-3">
+                        <h2 className="text-3xl md:text-4xl font-bold text-[#f1c6d9]">
+                            Skills
+                        </h2>
+                        <p className="text-sm md:text-base text-[#eeb3d0]">
+                            Where clean code, testing, and thoughtful product thinking come together.
+                        </p>
+                    </div>
+
+                    {/* icon row – now properly centered */}
+                    <div className="flex flex-wrap justify-center gap-10 md:gap-16">
+                        {/* Front-end */}
+                        <div className="w-40 flex flex-col items-center text-center space-y-3">
+                            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md">
+                                <Code2 className="h-6 w-6 text-[#c58ab8]" />
+                            </div>
+                            <h3 className="text-sm font-semibold tracking-wide uppercase text-[#f1c6d9] tracking-[0.18em]">
+                                Front-end
+                            </h3>
+                            <p className="text-xs leading-relaxed text-[#eeb3d0]">
+                                React, TypeScript, Vite, single-page apps.
+                            </p>
+                        </div>
+
+                        {/* Component Libraries */}
+                        <div className="w-40 flex flex-col items-center text-center space-y-3">
+                            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md">
+                                <LayoutTemplate className="h-6 w-6 text-[#c58ab8]" />
+                            </div>
+                            <h3 className="text-sm font-semibold tracking-wide uppercase text-[#f1c6d9] tracking-[0.18em]">
+                                Component Libraries
+                            </h3>
+                            <p className="text-xs leading-relaxed text-[#eeb3d0]">
+                                Blazor / MudBlazor, reusable UI systems.
+                            </p>
+                        </div>
+
+                        {/* Testing & QA */}
+                        <div className="w-40 flex flex-col items-center text-center space-y-3">
+                            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md">
+                                <BugPlay className="h-6 w-6 text-[#c58ab8]" />
+                            </div>
+                            <h3 className="text-sm font-semibold tracking-wide uppercase text-[#f1c6d9] tracking-[0.18em]">
+                                Testing &amp; QA
+                            </h3>
+                            <p className="text-xs leading-relaxed text-[#eeb3d0]">
+                                Selenium, bUnit, automation flows.
+                            </p>
+                        </div>
+
+                        {/* APIs & Data */}
+                        <div className="w-40 flex flex-col items-center text-center space-y-3">
+                            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md">
+                                <Database className="h-6 w-6 text-[#c58ab8]" />
+                            </div>
+                            <h3 className="text-sm font-semibold tracking-wide uppercase text-[#f1c6d9] tracking-[0.18em]">
+                                APIs &amp; Data
+                            </h3>
+                            <p className="text-xs leading-relaxed text-[#eeb3d0]">
+                                C# / .NET, REST APIs, SQL, data layers.
+                            </p>
+                        </div>
+
+                        {/* Cloud & Dev Tools */}
+                        <div className="w-40 flex flex-col items-center text-center space-y-3">
+                            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md">
+                                <CloudCog className="h-6 w-6 text-[#c58ab8]" />
+                            </div>
+                            <h3 className="text-sm font-semibold tracking-wide uppercase text-[#f1c6d9] tracking-[0.18em]">
+                                Cloud &amp; Dev Tools
+                            </h3>
+                            <p className="text-xs leading-relaxed text-[#eeb3d0]">
+                                Azure, Git, CI/CD, dev-friendly workflows.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
             {/* Painting teaser on home page */}
-            <section id="painting" className="section-padding bg-muted/30">
+            <section id="painting" className="section-padding bg-[#fff7fb]">
                 <div className="max-w-4xl mx-auto text-center space-y-6">
-                    <h2 className="text-3xl md:text-4xl font-bold text-secondary">
+                    <h2 className="text-3xl md:text-4xl font-bold text-[#f1c6d9]">
                         Painting Portfolio
                     </h2>
-                    <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+                    <p className="text-base md:text-lg text-[#8c6a83] max-w-2xl mx-auto">
                         Soft, symbolic paintings inspired by nature, travel, and quiet moments of
                         reflection — currently in progress as I build a new collection.
                     </p>
                     <Button
                         asChild
                         size="lg"
-                        variant="outline"
-                        className="border-secondary/70 text-secondary hover:bg-secondary hover:text-white"
+                        className="bg-[#f1c6d9] hover:bg-[#e3abc2] text-[#4c3046] border-0"
                     >
-                        <Link to="/painting">
-                            Explore painting portfolio
-                        </Link>
+                        <Link to="/painting">Explore painting portfolio</Link>
                     </Button>
                 </div>
             </section>
+
 
 
             {/* Photography teaser on home page */}
-            <section id="photography" className="section-padding bg-background">
+            <section id="photography" className="section-padding bg-[#f7fbff]">
                 <div className="max-w-4xl mx-auto text-center space-y-6">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-2 text-accent">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-2 text-[#c7d7e8]">
                         Photography
                     </h2>
-                    <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
+                    <p className="text-base md:text-lg text-[#7a6d8c] max-w-2xl mx-auto">
                         Soft, film-inspired photos that capture autumn walks, quiet rooms, and the
                         in–between moments that feel like little movie scenes.
                     </p>
-                    <Button asChild size="lg" className="bg-accent hover:bg-accent/90 mt-2">
-                        <Link to="/photography">
-                            Browse photography gallery
-                        </Link>
+                    <Button
+                        asChild
+                        size="lg"
+                        className="mt-2 bg-[#c7d7e8] hover:bg-[#b4c6dd] text-[#31425b] border-0"
+                    >
+                        <Link to="/photography">Browse photography gallery</Link>
                     </Button>
                 </div>
             </section>
+
 
 
             {/* Contact Section */}
@@ -358,7 +479,7 @@ const Index = () => {
                     <Card className="p-10 md:p-12 bg-white/80 border border-border/80 shadow-xl rounded-3xl">
                         <div className="text-center space-y-4 mb-8">
                             <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                                Let&apos;s Connect
+                                Let's Connect
                             </h2>
                             <p className="text-lg text-muted-foreground max-w-xl mx-auto">
                                 Open to collaborations, freelance work, or just a conversation
@@ -373,7 +494,7 @@ const Index = () => {
                                 asChild
                                 className="border-primary/50 hover:bg-primary hover:text-white"
                             >
-                                <a href="mailto:ana@example.com">
+                                <a href="mailto:anabindiu11@gmail.com">
                                     <Mail className="mr-2 h-5 w-5" />
                                     Email
                                 </a>
@@ -385,7 +506,7 @@ const Index = () => {
                                 className="border-secondary/50 hover:bg-secondary hover:text-white"
                             >
                                 <a
-                                    href="https://github.com"
+                                    href="https://github.com/anabindiu"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
@@ -400,7 +521,7 @@ const Index = () => {
                                 className="border-accent/50 hover:bg-accent hover:text-white"
                             >
                                 <a
-                                    href="https://linkedin.com"
+                                    href="https://www.linkedin.com/in/ana-bindiu-073659212/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >

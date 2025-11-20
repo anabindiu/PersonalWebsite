@@ -2,10 +2,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import {
-    Camera,
-    ArrowLeft,
-} from "lucide-react";
+import { Camera, ArrowLeft } from "lucide-react";
 
 import photo1 from "@/assets/photo-1.png";
 import photo2 from "@/assets/photo-2.png";
@@ -49,7 +46,7 @@ const photos = [
     photo13,
     photo14,
     photo15,
-    photo16, 
+    photo16,
     photo17,
     photo18,
     photo19,
@@ -58,22 +55,55 @@ const photos = [
     photo22,
     photo23,
     photo24,
-    photo25
+    photo25,
 ];
 
 const Photography = () => {
     return (
-        <div className="min-h-screen bg-background">
-            {/* simple top nav */}
-            <nav className="border-b border-border bg-background/90 backdrop-blur">
+        <div className="min-h-screen bg-[#fdf7ff] text-foreground">
+            {/* top nav with back + brand + tabs */}
+            <nav className="border-b border-[#f1c6d9]/40 bg-[#fff9fd]/90 backdrop-blur">
+                {/* back + brand row */}
                 <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-                    <Link to="/" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary">
+                    <Link
+                        to="/"
+                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-[#f1c6d9]"
+                    >
                         <ArrowLeft className="h-4 w-4" />
                         Back to home
                     </Link>
-                    <span className="text-sm font-medium text-muted-foreground">
-                        Ana Bindiu's Photography
+                </div>
+
+                {/* tabs row */}
+                <div className="max-w-6xl mx-auto px-6 pb-4 flex flex-wrap justify-center gap-6 text-sm font-medium text-muted-foreground">
+                    <a
+                        href="/#about"
+                        className="hover:text-[#f1c6d9] transition-colors"
+                    >
+                        About
+                    </a>
+                    <Link
+                        to="/development"
+                        className="hover:text-[#f1c6d9] transition-colors"
+                    >
+                        Development
+                    </Link>
+                    <Link
+                        to="/painting"
+                        className="hover:text-[#f1c6d9] transition-colors"
+                    >
+                        Painting
+                    </Link>
+                    {/* active tab */}
+                    <span className="text-[#9cb6cf]">
+                        Photography
                     </span>
+                    <Link
+                        to="/contact"
+                        className="hover:text-[#f1c6d9] transition-colors"
+                    >
+                        Contact
+                    </Link>
                 </div>
             </nav>
 
@@ -81,32 +111,37 @@ const Photography = () => {
                 {/* intro */}
                 <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
                     <div className="space-y-3 max-w-xl">
-                        <div className="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-muted-foreground">
+                        <div className="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#7d6a92]">
                             <Camera className="h-4 w-4" />
                             <span>Photography Portfolio</span>
                         </div>
-                        <h1 className="text-3xl md:text-4xl font-bold">
+                        <h1 className="text-3xl md:text-4xl font-bold text-[#9cb6cf]">
                             Quiet, cinematic moments from everyday life.
                         </h1>
                         <p className="text-sm md:text-base text-muted-foreground">
-                            A collection of walks, travels, and in-between scenes that feel a bit like film stills,
-                            soft light, honest emotion, and little details I don't want to forget.
+                            A collection of walks, travels, and in-between scenes that feel a bit
+                            like film stills : soft light, honest emotion, and little details I
+                            don&apos;t want to forget.
                         </p>
                     </div>
 
-                    <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+                    <Button
+                        asChild
+                        size="lg"
+                        className="bg-[#9cb6cf] hover:bg-[#86a4c3] text-white"
+                    >
                         <a href="#gallery">Scroll to gallery</a>
                     </Button>
                 </div>
 
                 {/* gallery */}
                 <section id="gallery" className="space-y-6">
-                    <Card className="p-4 md:p-6 bg-white/80 border-border/80">
+                    <Card className="p-4 md:p-6 bg-white/85 border border-[#c7d7e8] shadow-sm">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                             {photos.map((photo, index) => (
                                 <div
                                     key={index}
-                                    className="group relative overflow-hidden rounded-2xl border border-border/70 bg-muted/40 image-hover-dynamic cursor-zoom-in"
+                                    className="group relative overflow-hidden rounded-2xl border border-[#f1c6d9]/60 bg-[#fdf0ea] image-hover-dynamic cursor-zoom-in"
                                 >
                                     <img
                                         src={photo}

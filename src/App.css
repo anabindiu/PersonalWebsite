@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Pacifico&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,76 +9,79 @@
 @layer base {
     :root {
         /* soft warm background + deep, calm foreground */
-        --background: 48 100% 97%;
+        --background: 333 60% 96%;
         --foreground: 249 25% 12%;
         --card: 0 0% 100%;
         --card-foreground: 249 25% 12%;
         --popover: 0 0% 100%;
         --popover-foreground: 249 25% 12%;
         /* main lavender + lilac accents */
-        --primary: 258 70% 58%;
+        --primary: 338 63% 82%; /* Rosy Glow */
         --primary-foreground: 0 0% 100%;
-        --secondary: 295 70% 65%;
+        --secondary: 285 36% 82%; /* Lilac Mist */
         --secondary-foreground: 0 0% 100%;
-        --muted: 48 70% 95%;
+        --muted: 211 42% 94%; /* very soft Daydream Blue background */
         --muted-foreground: 249 15% 35%;
-        --accent: 260 70% 60%;
+        --accent: 211 42% 85%; /* Daydream Blue */
         --accent-foreground: 0 0% 100%;
         --destructive: 0 72% 55%;
         --destructive-foreground: 0 0% 100%;
-        --border: 45 24% 88%;
-        --input: 45 24% 88%;
-        --ring: 258 70% 58%;
+        --border: 209 35% 82%; /* Powder Blue */
+        --input: 209 35% 82%;
+        --ring: 338 63% 82%; /* match primary */
+
         --radius: 0.75rem;
-        /* extra creative colors for gradients, if needed */
-        --creative-purple: 258 70% 58%;
-        --creative-pink: 295 70% 65%;
-        --creative-teal: 167 62% 55%;
-        --creative-coral: 18 86% 65%;
-        --creative-mint: 151 56% 60%;
-        --sidebar-background: 48 100% 97%;
+        /* extras for gradients */
+        --creative-purple: 285 36% 82%; /* Lilac Mist */
+        --creative-pink: 338 63% 82%; /* Rosy Glow */
+        --creative-teal: 211 42% 85%; /* Daydream Blue */
+        --creative-coral: 333 61% 86%; /* Candy Blush */
+        --creative-mint: 209 35% 71%; /* Powder Blue */
+        /* sidebar (if you use it) */
+        --sidebar-background: 333 60% 96%;
         --sidebar-foreground: 249 25% 12%;
-        --sidebar-primary: 258 70% 58%;
+        --sidebar-primary: 338 63% 82%;
         --sidebar-primary-foreground: 0 0% 100%;
-        --sidebar-accent: 48 70% 95%;
-        --sidebar-accent-foreground: 258 70% 58%;
-        --sidebar-border: 45 24% 88%;
-        --sidebar-ring: 258 70% 58%;
+        --sidebar-accent: 211 42% 94%;
+        --sidebar-accent-foreground: 338 63% 82%;
+        --sidebar-border: 209 35% 82%;
+        --sidebar-ring: 338 63% 82%;
     }
 
     .dark {
+        /* you can tweak this later, but this keeps a usable dark mode */
         --background: 250 25% 6%;
         --foreground: 48 40% 96%;
         --card: 250 25% 10%;
         --card-foreground: 48 40% 96%;
         --popover: 250 25% 10%;
         --popover-foreground: 48 40% 96%;
-        --primary: 258 80% 70%;
+        --primary: 338 63% 72%;
         --primary-foreground: 250 25% 10%;
-        --secondary: 295 75% 72%;
+        --secondary: 285 36% 70%;
         --secondary-foreground: 0 0% 100%;
         --muted: 250 18% 18%;
         --muted-foreground: 48 25% 80%;
-        --accent: 260 70% 60%;
+        --accent: 211 42% 70%;
         --accent-foreground: 0 0% 100%;
         --destructive: 0 72% 55%;
         --destructive-foreground: 0 0% 100%;
         --border: 250 20% 20%;
         --input: 250 20% 20%;
-        --ring: 258 80% 70%;
-        --creative-purple: 258 80% 70%;
-        --creative-pink: 295 75% 72%;
-        --creative-teal: 167 62% 55%;
-        --creative-coral: 18 86% 65%;
-        --creative-mint: 151 56% 60%;
+        --ring: 338 63% 72%;
+        --creative-purple: 285 36% 70%;
+        --creative-pink: 338 63% 72%;
+        --creative-teal: 211 42% 65%;
+        --creative-coral: 333 61% 70%;
+        --creative-mint: 209 35% 60%;
         --sidebar-background: 250 25% 8%;
         --sidebar-foreground: 48 40% 96%;
-        --sidebar-primary: 258 80% 70%;
+        --sidebar-primary: 338 63% 72%;
         --sidebar-primary-foreground: 0 0% 100%;
         --sidebar-accent: 250 20% 16%;
         --sidebar-accent-foreground: 48 40% 96%;
         --sidebar-border: 250 20% 20%;
-        --sidebar-ring: 258 80% 70%;
+        --sidebar-ring: 338 63% 72%;
     }
 }
 
@@ -95,6 +98,12 @@
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Playfair Display', serif;
     }
+    .brand-logo {
+        font-family: 'Pacifico', 'Playfair Display', cursive;
+        font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+        letter-spacing: 0.08em;
+        color: #f1c6d9; /* Candy Blush */
+    }
 }
 
 @layer utilities {
@@ -108,12 +117,14 @@
 
     /* strong top/bottom gradient used in footer etc. */
     .gradient-creative {
-        background: linear-gradient( 135deg, hsl(var(--creative-purple)) 0%, hsl(var(--creative-pink)) 100% );
+        background: linear-gradient( 135deg, hsl(var(--creative-pink)) 0%, hsl(var(--creative-purple)) 40%, hsl(var(--creative-teal)) 100% );
     }
 
     /* subtle hero background like the example site */
     .gradient-subtle {
-        background: radial-gradient(circle at top left, hsla(258, 70%, 96%, 1) 0, transparent 55%), radial-gradient(circle at bottom right, hsla(295, 100%, 97%, 1) 0, transparent 45%), linear-gradient(to bottom, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+        background: radial-gradient(circle at top left, hsla(333, 60%, 96%, 1) 0, /* Candy Blush glow */
+        transparent 55%), radial-gradient(circle at bottom right, hsla(285, 36%, 95%, 1) 0, /* Lilac Mist glow */
+        transparent 45%), linear-gradient( to bottom, hsl(var(--background)) 0%, hsl(var(--muted)) 100% );
     }
 
     .hover-lift {
@@ -138,6 +149,60 @@
     .hero-card {
         border-radius: 2rem;
         box-shadow: 0 32px 80px -40px hsl(249 40% 30% / 0.35);
-        background: hsl(0 0% 100%); /* clean white card like Naomi’s */
+        background: hsl(0 0% 100%); 
+    }
+
+    /* background behind skills block */
+    .skills-section {
+        background-color: #f6e7dd; /* warm baby beige */
+    }
+
+    /* main “Skills” heading */
+    .skills-title {
+        color: #f1c6d9 !important; /* Candy Blush */
+    }
+
+    /* small labels like “Front-end”, “Component Libraries” */
+    .skills-label {
+        color: #f1c6d9 !important;
+        letter-spacing: 0.18em;
+    }
+
+    /* body text under each label */
+    .skills-body {
+        color: #eeb3d0; /* softer rosy pink */
+    }
+
+    /* icon wrapper – centered circle with a blob behind it */
+    .skill-icon-wrap {
+        @apply inline-flex items-center justify-center;
+        position: relative;
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+
+    /* beige blob behind the icon */
+    .skill-icon-blob {
+        position: absolute;
+        width: 3.6rem;
+        height: 3.6rem;
+        border-radius: 9999px;
+        background: #fbe1d4; /* light peachy beige */
+        opacity: 0.9;
+        transform: translate(6px, 8px);
+    }
+
+    /* white circle with the Lucide icon */
+    .skill-icon-inner {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 9999px;
+        background: #ffffff;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+        color: #c58ab8; /* lilac for the icon */
     }
 }
