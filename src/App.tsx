@@ -1,35 +1,26 @@
-﻿import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-import Photography from "./pages/Photography"; 
-import Painting from "./pages/Painting"; 
-import Development from "./pages/Development";
+﻿// src/App.tsx
+import { HashRouter, Routes, Route } from "react-router-dom";
+
+import Index from "@/pages/Index";
+import Development from "@/pages/Development";
+import Painting from "@/pages/Painting";
+import Photography from "@/pages/Photography";
 import Contact from "@/pages/Contact";
+import NotFound from "@/pages/NotFound";
 
-const queryClient = new QueryClient();
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/development" element={<Development />} /> 
-          <Route path="/photography" element={<Photography />} /> 
-          <Route path="/painting" element={<Painting />} /> 
-          <Route path="/painting/:productId" element={<Painting />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+function App() {
+    return (
+        <HashRouter>
+            <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/development" element={<Development />} />
+                <Route path="/painting/*" element={<Painting />} />
+                <Route path="/photography" element={<Photography />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={<NotFound />} />
+            </Routes>
+        </HashRouter>
+    );
+}
 
 export default App;
