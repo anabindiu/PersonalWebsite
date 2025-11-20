@@ -6,7 +6,7 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <React.StrictMode>
-        {/* 👇 THIS is the important part */}
+        {/* this makes routing work correctly at /PersonalWebsite/ */}
         <BrowserRouter basename={import.meta.env.BASE_URL}>
             <App />
         </BrowserRouter>
