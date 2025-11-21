@@ -296,79 +296,80 @@ const Index = () => {
                             Skills
                         </h2>
                         <p className="text-sm md:text-base text-[#eeb3d0]">
-                            Where clean code, testing, and thoughtful product thinking come together.
+                            The mix of tools and practices I use to build calm, reliable experiences.
                         </p>
                     </div>
 
-                    {/* icon row – now properly centered */}
+                    {/* icon row */}
                     <div className="flex flex-wrap justify-center gap-10 md:gap-16">
-                        {/* Front-end */}
+                        {/* Languages & Frameworks */}
                         <div className="w-40 flex flex-col items-center text-center space-y-3">
                             <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md">
                                 <Code2 className="h-6 w-6 text-[#c58ab8]" />
                             </div>
-                            <h3 className="text-sm font-semibold tracking-wide uppercase text-[#f1c6d9] tracking-[0.18em]">
-                                Front-end
+                            <h3 className="text-xs font-semibold tracking-wide uppercase text-[#f1c6d9] tracking-[0.18em]">
+                                Languages &amp; Frameworks
                             </h3>
                             <p className="text-xs leading-relaxed text-[#eeb3d0]">
-                                React, TypeScript, Vite, single-page apps.
+                                Python, Java, C/C++, C#, .NET Core, HTML/CSS, JavaScript, React, Blazor, Firebase.
                             </p>
                         </div>
 
-                        {/* Component Libraries */}
-                        <div className="w-40 flex flex-col items-center text-center space-y-3">
-                            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md">
-                                <LayoutTemplate className="h-6 w-6 text-[#c58ab8]" />
-                            </div>
-                            <h3 className="text-sm font-semibold tracking-wide uppercase text-[#f1c6d9] tracking-[0.18em]">
-                                Component Libraries
-                            </h3>
-                            <p className="text-xs leading-relaxed text-[#eeb3d0]">
-                                Blazor / MudBlazor, reusable UI systems.
-                            </p>
-                        </div>
-
-                        {/* Testing & QA */}
+                        {/* Testing & Automation */}
                         <div className="w-40 flex flex-col items-center text-center space-y-3">
                             <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md">
                                 <BugPlay className="h-6 w-6 text-[#c58ab8]" />
                             </div>
-                            <h3 className="text-sm font-semibold tracking-wide uppercase text-[#f1c6d9] tracking-[0.18em]">
-                                Testing &amp; QA
+                            <h3 className="text-xs font-semibold tracking-wide uppercase text-[#f1c6d9] tracking-[0.18em]">
+                                Testing &amp; Automation
                             </h3>
                             <p className="text-xs leading-relaxed text-[#eeb3d0]">
-                                Selenium, bUnit, automation flows.
+                                Selenium IDE &amp; WebDriver (C#), bUnit, automated UI and integration testing.
                             </p>
                         </div>
 
-                        {/* APIs & Data */}
-                        <div className="w-40 flex flex-col items-center text-center space-y-3">
-                            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md">
-                                <Database className="h-6 w-6 text-[#c58ab8]" />
-                            </div>
-                            <h3 className="text-sm font-semibold tracking-wide uppercase text-[#f1c6d9] tracking-[0.18em]">
-                                APIs &amp; Data
-                            </h3>
-                            <p className="text-xs leading-relaxed text-[#eeb3d0]">
-                                C# / .NET, REST APIs, SQL, data layers.
-                            </p>
-                        </div>
-
-                        {/* Cloud & Dev Tools */}
+                        {/* Cloud & Tools */}
                         <div className="w-40 flex flex-col items-center text-center space-y-3">
                             <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md">
                                 <CloudCog className="h-6 w-6 text-[#c58ab8]" />
                             </div>
-                            <h3 className="text-sm font-semibold tracking-wide uppercase text-[#f1c6d9] tracking-[0.18em]">
-                                Cloud &amp; Dev Tools
+                            <h3 className="text-xs font-semibold tracking-wide uppercase text-[#f1c6d9] tracking-[0.18em]">
+                                Cloud &amp; Tools
                             </h3>
                             <p className="text-xs leading-relaxed text-[#eeb3d0]">
-                                Azure, Git, CI/CD, dev-friendly workflows.
+                                Azure Functions, Blob Storage, Event Grid, REST APIs, Postman, Git, QuestPDF.
+                            </p>
+                        </div>
+
+                        {/* Databases & Systems */}
+                        <div className="w-40 flex flex-col items-center text-center space-y-3">
+                            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md">
+                                <Database className="h-6 w-6 text-[#c58ab8]" />
+                            </div>
+                            <h3 className="text-xs font-semibold tracking-wide uppercase text-[#f1c6d9] tracking-[0.18em]">
+                                Databases &amp; Systems
+                            </h3>
+                            <p className="text-xs leading-relaxed text-[#eeb3d0]">
+                                MySQL, Linux, Windows 10/11, network principles, HTTP/TCP/IP/UDP.
+                            </p>
+                        </div>
+
+                        {/* Product, UX & Collaboration */}
+                        <div className="w-40 flex flex-col items-center text-center space-y-3">
+                            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md">
+                                <LayoutTemplate className="h-6 w-6 text-[#c58ab8]" />
+                            </div>
+                            <h3 className="text-xs font-semibold tracking-wide uppercase text-[#f1c6d9] tracking-[0.18em]">
+                                Product &amp; UX
+                            </h3>
+                            <p className="text-xs leading-relaxed text-[#eeb3d0]">
+                                UI/UX, front-end development, Agile teamwork, content &amp; graphic design.
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
+
 
 
             {/* Painting teaser on home page */}
