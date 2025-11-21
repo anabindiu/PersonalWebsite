@@ -126,7 +126,7 @@ const PaintingList = () => {
                 </div>
 
                 {/* tabs row */}
-                <div className="max-w-6xl mx-auto px-6 pb-4 flex flex-wrap justify-center gap-6 text-sm font-medium text-muted-foreground">
+                <div className="max-w-6xl mx-auto px-6 pb-2 flex flex-wrap justify-center gap-6 text-sm font-medium text-muted-foreground">
                     <Link to="/about" className="hover:text-[#f1c6d9] transition-colors">
                         About
                     </Link>
@@ -150,20 +150,20 @@ const PaintingList = () => {
                 </div>
             </nav>
 
-            <main className="section-padding max-w-6xl mx-auto space-y-10">
+            <main className="max-w-6xl mx-auto px-6 py-8 md:py-10 space-y-6">
                 {/* Heading */}
-                <header>
+                <header className="mb-2 md:mb-4">
                     <h1 className="text-3xl md:text-4xl font-bold text-[#f1c6d9]">
                         Products
                     </h1>
                 </header>
 
                 {/* Product cards */}
-                <section className="grid gap-8">
+                <section className="grid gap-6">
                     {products.map((product) => (
                         <Card
                             key={product.id}
-                            className="bg-white/90 border-[#f1c6d9]/60 shadow-sm p-4 md:p-6"
+                            className="bg-white/90 border-[#f1c6d9]/60 shadow-sm p-3 md:p-5"
                         >
                             <div className="grid gap-6 md:grid-cols-[minmax(0,1.4fr),minmax(0,1fr)] items-start">
                                 {/* Left: big cover image */}
