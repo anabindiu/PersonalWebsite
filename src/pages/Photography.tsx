@@ -76,7 +76,7 @@ const Photography = () => {
 
                 {/* tabs row */}
                 <div className="max-w-6xl mx-auto px-6 pb-4 flex flex-wrap justify-center gap-6 text-sm font-medium text-muted-foreground">
-                    <Link to="/#about" className="hover:text-[#f1c6d9] transition-colors">
+                    <Link to="/about" className="hover:text-[#f1c6d9] transition-colors">
                         About
                     </Link>
                     <Link
