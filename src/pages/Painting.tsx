@@ -14,8 +14,6 @@ import awaekendPaintingDetail1 from "@/assets/AwakenedWingspainting2.png";
 import awaekendPaintingDetail2 from "@/assets/AwakenedWingspaintings3.png";
 import painting2Video from "@/assets/ButterflyTotevideo.mp4";
 import habarnamLogo from "@/assets/habarnamLogo.png"; 
-// TODO later: add your butterfly tote mockup here, e.g.
-// import awakenedWingsCover from "@/assets/AwakenedWingsTote.png";
 
 type MediaItem =
     | { type: "image"; src: string; alt: string }
@@ -73,7 +71,7 @@ const products: Product[] = [
         description:
             "Awakened Wings is a little prayer you can carry on your shoulder. Three butterflies rise through a dreamy, lilac sky—symbolizing seasons of change, healing, and quiet spiritual awakening. It’s for morning walks, journaling days, and café moments where you feel God tugging your heart a little closer to the light. Roomy enough for books, sketchbooks, and everyday essentials, while still feeling soft, lightweight, and easy to throw on with anything.",
         // TODO: swap this to your butterfly mockup when ready:
-        cover: paintingCover,
+        cover: paintingCover2,
         media: [
             {
                 type: "image",
@@ -158,7 +156,6 @@ const PaintingList = () => {
                     <h1 className="text-3xl md:text-4xl font-bold text-[#f1c6d9]">
                         Products
                     </h1>
-                    <p className="text-lg md:text-xl text-[#7d6a92]">Fan Favorites</p>
                 </header>
 
                 {/* Product cards */}
