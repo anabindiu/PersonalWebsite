@@ -69,7 +69,7 @@ const products: Product[] = [
         teaser:
             "A soft sky filled with hand-drawn butterflies, a gentle reminder that your soul is allowed to grow, unfold, and begin again.",
         description:
-            "Awakened Wings is a little prayer you can carry on your shoulder. Two butterflies rise through a dreamy, lilac sky—symbolizing seasons of change, healing, and quiet spiritual awakening. It’s for morning walks, journaling days, and café moments where you feel God tugging your heart a little closer to the light. Roomy enough for books, sketchbooks, and everyday essentials, while still feeling soft, lightweight, and easy to throw on with anything.",
+            "Awakened Wings is a little prayer you can carry on your shoulder. Two butterflies rise through a dreamy, lilac sky, symbolizing seasons of change, healing, and quiet spiritual awakening. It’s for morning walks, journaling days, and café moments where you feel God tugging your heart a little closer to the light. Roomy enough for books, sketchbooks, and everyday essentials, while still feeling soft, lightweight, and easy to throw on with anything.",
         // TODO: swap this to your butterfly mockup when ready:
         cover: paintingCover2,
         media: [
