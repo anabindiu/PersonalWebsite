@@ -76,9 +76,9 @@ const Index = () => {
                 </div>
 
                 <div className="max-w-6xl mx-auto px-6 pb-4 flex flex-wrap justify-center gap-6 text-sm font-medium text-muted-foreground">
-                    <a href="#about" className="hover:text-primary transition-colors">
+                    <Link to="/#about" className="hover:text-[#f1c6d9] transition-colors">
                         About
-                    </a>
+                    </Link>
                     <Link
                         to="/development"
                         className="text-sm font-medium transition-colors hover:text-primary"
