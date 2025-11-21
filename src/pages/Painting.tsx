@@ -152,7 +152,7 @@ const PaintingList = () => {
 
             <main className="section-padding max-w-6xl mx-auto space-y-10">
                 {/* Heading */}
-                <header className="space-y-2">
+                <header>
                     <h1 className="text-3xl md:text-4xl font-bold text-[#f1c6d9]">
                         Products
                     </h1>
