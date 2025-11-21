@@ -6,6 +6,7 @@ import photo16 from "@/assets/italy2.jpg";
 import photo20 from "@/assets/italy6.jpg";
 import photo24 from "@/assets/italy8.jpg";
 import photo25 from "@/assets/budapest2.jpg";
+import AboutStorybook from "@/components/AboutStorybook";
 import { Link } from "react-router-dom";
 
 
@@ -252,6 +253,8 @@ const Index = () => {
                     </div>
                 </div>
             </section>
+
+            <AboutStorybook />
 
             {/* Development Section */}
             <section id="dev" className="section-padding bg-[#fdf7ff]">
