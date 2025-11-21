@@ -245,7 +245,7 @@ const PaintingProduct = ({ product }: { product: Product }) => {
 
                 {/* tabs row */}
                 <div className="max-w-6xl mx-auto px-6 pb-4 flex flex-wrap justify-center gap-6 text-sm font-medium text-muted-foreground">
-                    <a href="/#about" className="hover:text-[#f1c6d9] transition-colors">
+                    <a href={`${import.meta.env.BASE_URL}#about`} className="hover:text-[#f1c6d9] transition-colors">
                         About
                     </a>
                     <Link
