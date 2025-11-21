@@ -11,7 +11,7 @@ import paintingDetail2 from "@/assets/Moonrisepainting3.png";
 import paintingVideo from "@/assets/MoonriseDaydream.mp4";
 import paintingCover2 from "@/assets/AwakenedWingspainting1.png";
 import awaekendPaintingDetail1 from "@/assets/AwakenedWingspainting2.png";
-import awaekendPaintingDetail2 from "@/assets/AwakenedWingspainting3.png";
+import awaekendPaintingDetail2 from "@/assets/AwakenedWingspaintings3.png";
 import painting2Video from "@/assets/ButterflyTotevideo.mp4";
 import habarnamLogo from "@/assets/habarnamLogo.png"; 
 // TODO later: add your butterfly tote mockup here, e.g.
