@@ -226,64 +226,61 @@ const Index = () => {
 
             {/* Development Section */}
             <section id="dev" className="section-padding bg-[#fdf7ff]">
-                <div className="max-w-6xl mx-auto space-y-10">
+                <div className="max-w-4xl mx-auto space-y-8">
+                    {/* Heading */}
                     <div className="text-center space-y-4">
-                        {/* Lilac Mist heading */}
                         <h2 className="text-3xl md:text-4xl font-bold text-[#dac2e2]">
                             Software Development
                         </h2>
-                        {/* Soft neutral text */}
                         <p className="text-[#7d6a92] max-w-2xl mx-auto">
                             I enjoy turning ideas into intuitive interfaces and reliable
                             systems, from pixel to database.
                         </p>
                     </div>
 
-                    <div className="grid gap-8 md:grid-cols-[1.1fr,0.9fr] items-start">
-                        <Card className="p-7 md:p-8 border border-[#f1c6d9] bg-white/90 shadow-sm">
-                            <h3 className="text-xl font-semibold mb-4 text-[#4a3059]">
-                                Focus &amp; Approach
-                            </h3>
-                            <p className="text-sm md:text-base text-[#7d6a92] mb-5 leading-relaxed">
-                                I care about thoughtful UI, readable code, and collaboration.
-                                Most of my work is in modern web stacks — especially TypeScript
-                                and React — but I’m comfortable moving across the stack when
-                                needed.
-                            </p>
-                            <div className="flex flex-wrap gap-3">
-                                {[
-                                    "Front-end development",
-                                    "Component libraries",
-                                    "Design systems",
-                                    "API integration",
-                                    "Testing & QA",
-                                ].map((item) => (
-                                    <span
-                                        key={item}
-                                        className="px-3 py-1.5 rounded-full bg-[#fef4f9] border border-[#f1c6d9] text-xs font-medium text-[#d481a6]"
-                                    >
-                                        {item}
-                                    </span>
-                                ))}
-                            </div>
-                        </Card>
+                    {/* Single centered card instead of left-aligned grid */}
+                    <Card className="p-7 md:p-8 border border-[#f1c6d9] bg-white/90 shadow-sm">
+                        <h3 className="text-xl font-semibold mb-4 text-[#4a3059]">
+                            Focus &amp; Approach
+                        </h3>
+                        <p className="text-sm md:text-base text-[#7d6a92] mb-5 leading-relaxed">
+                            I care about thoughtful UI, readable code, and collaboration.
+                            Most of my work is in modern web stacks — especially TypeScript
+                            and React — but I’m comfortable moving across the stack when
+                            needed.
+                        </p>
+                        <div className="flex flex-wrap gap-3">
+                            {[
+                                "Front-end development",
+                                "Component libraries",
+                                "Design systems",
+                                "API integration",
+                                "Testing & QA",
+                            ].map((item) => (
+                                <span
+                                    key={item}
+                                    className="px-3 py-1.5 rounded-full bg-[#fef4f9] border border-[#f1c6d9] text-xs font-medium text-[#d481a6]"
+                                >
+                                    {item}
+                                </span>
+                            ))}
+                        </div>
+                    </Card>
+
+                    {/* Button – centered under the card */}
+                    <div className="flex justify-center pt-2">
+                        <Button
+                            asChild
+                            size="lg"
+                            variant="outline"
+                            className="border-[#f1c6d9] text-[#f1c6d9] hover:bg-[#f1c6d9] hover:text-[#4c3046]"
+                        >
+                            <Link to="/development">See projects</Link>
+                        </Button>
                     </div>
                 </div>
-
-                {/* Button – Candy Blush outline */}
-                <div className="mt-8 flex justify-center">
-                    <Button
-                        asChild
-                        size="lg"
-                        variant="outline"
-                        className="border-[#f1c6d9] text-[#f1c6d9] hover:bg-[#f1c6d9] hover:text-[#4c3046]"
-                    >
-                        <Link to="/development">
-                            See projects
-                        </Link>
-                    </Button>
-                </div>
             </section>
+
 
             {/* Skills Section */}
             <section
