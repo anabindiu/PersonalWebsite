@@ -6,7 +6,6 @@ import photo16 from "@/assets/italy2.jpg";
 import photo20 from "@/assets/italy6.jpg";
 import photo24 from "@/assets/italy8.jpg";
 import photo25 from "@/assets/budapest2.jpg";
-import AboutStorybook from "@/components/AboutStorybook";
 import { Link } from "react-router-dom";
 
 
@@ -27,35 +26,6 @@ import {
 
 const Index = () => {
     const heroImages = [photo16, photo20, photo24, photo25];
-    const skills = [
-        {
-            emoji: "⚛️",
-            title: "Front-end Engineering",
-            subtitle: "React, TypeScript, Vite, SPA patterns.",
-        },
-        {
-            emoji: "🧩",
-            title: "Component Libraries",
-            subtitle: "Blazor / MudBlazor, reusable UI systems.",
-        },
-        {
-            emoji: "🧪",
-            title: "Testing & QA Automation",
-            subtitle: "Selenium, bUnit, xUnit, end-to-end flows.",
-        },
-        {
-            emoji: "🗄️",
-            title: "APIs & Data",
-            subtitle: "C# / .NET, REST APIs, SQL, EF-style data layers.",
-        },
-        {
-            emoji: "☁️",
-            title: "Cloud & Dev Tools",
-            subtitle: "Azure, Git, CI/CD, DevOps-friendly workflows.",
-        },
-    ];
-
-
     const [activeHeroIndex, setActiveHeroIndex] = useState(0);
 
     useEffect(() => {
@@ -254,8 +224,6 @@ const Index = () => {
                 </div>
             </section>
 
-            <AboutStorybook />
-
             {/* Development Section */}
             <section id="dev" className="section-padding bg-[#fdf7ff]">
                 <div className="max-w-6xl mx-auto space-y-10">
@@ -272,7 +240,6 @@ const Index = () => {
                     </div>
 
                     <div className="grid gap-8 md:grid-cols-[1.1fr,0.9fr] items-start">
-                        {/* Left card – Rosy Glow accents */}
                         <Card className="p-7 md:p-8 border border-[#f1c6d9] bg-white/90 shadow-sm">
                             <h3 className="text-xl font-semibold mb-4 text-[#4a3059]">
                                 Focus &amp; Approach
@@ -296,34 +263,6 @@ const Index = () => {
                                         className="px-3 py-1.5 rounded-full bg-[#fef4f9] border border-[#f1c6d9] text-xs font-medium text-[#d481a6]"
                                     >
                                         {item}
-                                    </span>
-                                ))}
-                            </div>
-                        </Card>
-
-                        {/* Right card – Daydream Blue accents */}
-                        <Card className="p-7 md:p-8 border border-[#c7d7e8] bg-[#f7fbff] shadow-sm">
-                            <h3 className="text-xl font-semibold mb-4 text-[#384763]">
-                                Tech Stack
-                            </h3>
-                            <div className="flex flex-wrap gap-2.5">
-                                {[
-                                    "React",
-                                    "TypeScript",
-                                    "Vite",
-                                    "Node.js",
-                                    "C# / .NET",
-                                    "Python",
-                                    "SQL",
-                                    "Git & GitHub",
-                                    "UI/UX",
-                                    "Testing",
-                                ].map((skill) => (
-                                    <span
-                                        key={skill}
-                                        className="px-3 py-1.5 rounded-full bg-white text-xs font-medium text-[#4b5c78] border border-[#c7d7e8]"
-                                    >
-                                        {skill}
                                     </span>
                                 ))}
                             </div>

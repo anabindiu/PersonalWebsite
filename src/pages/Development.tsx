@@ -131,6 +131,33 @@ const Development = () => {
                         Detailed case studies coming soon
                     </Button>
                 </div>
+
+                <Card className="p-7 md:p-8 border border-[#c7d7e8] bg-[#f7fbff] shadow-sm">
+                    <h3 className="text-xl font-semibold mb-4 text-[#384763]">
+                        Tech Stack
+                    </h3>
+                    <div className="flex flex-wrap gap-2.5">
+                        {[
+                            "React",
+                            "TypeScript",
+                            "Vite",
+                            "Node.js",
+                            "C# / .NET",
+                            "Python",
+                            "SQL",
+                            "Git & GitHub",
+                            "UI/UX",
+                            "Testing",
+                        ].map((skill) => (
+                            <span
+                                key={skill}
+                                className="px-3 py-1.5 rounded-full bg-white text-xs font-medium text-[#4b5c78] border border-[#c7d7e8]"
+                            >
+                                {skill}
+                            </span>
+                        ))}
+                    </div>
+                </Card>
             </main>
         </div>
     );
